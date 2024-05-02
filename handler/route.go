@@ -7,7 +7,6 @@ import (
 
 func RoutePerson(mux *http.ServeMux, storage Storage) {
 	p := newPerson(storage)
-
 	mux.HandleFunc("/v1/persons/create", middleware.Log(p.create))
 
 	mux.HandleFunc("/v1/persons/get-all", middleware.Log(p.getAll))
